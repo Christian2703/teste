@@ -24,8 +24,10 @@ if not scriptExecuted then
     if scriptUrl then
         loadstring(game:HttpGet(scriptUrl))()
         scriptExecuted = true
+        Fluent:Destroy()  -- Destroy Fluent after executing the script
     else
         toclipboard("https://discord.gg/dkhub")
         game.Players.LocalPlayer:Kick("Game Not Supported, Discord copied to clipboard")
+        Fluent:Destroy()  -- Destroy Fluent if the game is not supported
     end
 end
